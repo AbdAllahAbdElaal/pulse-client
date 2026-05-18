@@ -1,0 +1,480 @@
+:root {
+  --primary-color: #0d9488;
+  --secondary-color: #06b6d4;
+  --accent-color: #f97316;
+  --bg-soft: #f4f8fb;
+  --text-dark: #1f2937;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text-dark);
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+}
+
+.btns {
+  background-color: #358b80;
+  color: #fff;
+  transition: 0.7s;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.btns:hover {
+  background-color: #1e5f54;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.page-header {
+  background: #0f766e;
+  /* background: linear-gradient(135deg, #0f766e, #0284c7); */
+}
+
+.navbar-brand {
+  color: var(--primary-color) !important;
+}
+
+.hero-section {
+  min-height: 70vh;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  padding: 90px 0;
+}
+
+.hero-carousel .carousel-item img {
+  height: 78vh;
+  object-fit: cover;
+  filter: brightness(0.5) saturate(1.1);
+}
+
+.hero-overlay {
+  bottom: 50%;
+  transform: translateY(50%);
+  animation: fadeUp 0.9s ease;
+}
+
+.logo {
+  padding-top: 10px;
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar.bg-transparent {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0) 100%
+  ) !important;
+}
+
+/* تحسين مظهر الروابط عند تمرير الماوس */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.small-title {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.hero-text {
+  max-width: 700px;
+}
+
+.section-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 4px;
+  border-radius: 4px;
+  margin: 10px auto 0;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.stat-box {
+  background: linear-gradient(180deg, #ffffff, var(--bg-soft));
+  border-radius: 10px;
+  padding: 20px 10px;
+  box-shadow: 0 8px 22px rgba(2, 132, 199, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.stat-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 28px rgba(2, 132, 199, 0.18);
+}
+
+.stat-box h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.news-box {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.news-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 24px rgba(15, 118, 110, 0.15);
+}
+
+.news-box h6 {
+  color: var(--primary-color);
+}
+
+.partner-box {
+  background: #fff;
+  border: 1px dashed #94a3b8;
+  border-radius: 8px;
+  padding: 24px 12px;
+  color: #64748b;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.partner-box:hover {
+  background: #f8fafc;
+  border-color: var(--secondary-color);
+  color: #0f172a;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #0e7490);
+  border: none;
+  box-shadow: 0 8px 16px rgba(13, 148, 136, 0.25);
+  transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(13, 148, 136, 0.35);
+  background: linear-gradient(135deg, #0f766e, #0369a1);
+}
+
+.site-footer {
+  background-color: #0f172a;
+}
+
+.footer-brand {
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.footer-text {
+  color: #cbd5e1;
+}
+
+.footer-title {
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.footer-links a,
+.social-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+}
+
+.footer-links a:hover,
+.social-links a:hover {
+  color: #ffffff;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #475569;
+  background: #1e293b;
+  color: #e2e8f0 !important;
+  transition: all 0.25s ease;
+}
+
+.social-icon:hover {
+  /* border-color: var(--secondary-color); */
+  /* background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); */
+  transform: translateY(-2px);
+  color: #fff;
+}
+.Facebook-icon:hover {
+  background-color: #0703ffbb;
+}
+.Instagram-icon:hover {
+  background-color: #f73737;
+}
+.Twitter-icon:hover {
+  background-color: #000000;
+}
+.LinkedIn-icon:hover {
+  background-color: #3d41ff;
+}
+.YouTube-icon:hover {
+  background-color: #d60202;
+}
+
+.footer-bottom {
+  border-top: 1px solid #334155;
+  color: #94a3b8;
+}
+
+.card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 28px rgba(2, 132, 199, 0.14) !important;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(55%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-carousel .carousel-item img {
+    height: 65vh;
+  }
+
+  .hero-overlay {
+    bottom: 45%;
+  }
+}
+
+/* زر التبرع الأخضر المميز */
+.btn-custom-green {
+  background-color: #00b862;
+  color: white !important;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 184, 98, 0.3);
+}
+
+.btn-custom-green:hover {
+  background-color: #009a52;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 184, 98, 0.4);
+}
+
+/* تنسيق فيديو الخلفية */
+.object-fit-cover {
+  object-fit: cover;
+}
+
+/* تعديل عناوين الأقسام لتكون على اليسار بدلاً من المنتصف في الصفحات الداخلية */
+.section-title.text-start::after {
+  margin: 10px 0 0 0; /* نقل الخط الزخرفي لليسار */
+}
+
+/* nav bar in small device */
+/* تنسيقات النافبار للشاشات الصغيرة والمتوسطة (الموبايل والتابلت) */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    /* إضافة خلفية داكنة بشفافية بسيطة لفصل القائمة عن الصورة */
+    background-color: rgba(
+      31,
+      41,
+      55,
+      0.95
+    ); /* يعادل var(--text-dark) تقريباً */
+
+    /* إضافة تأثير الضبابية (Glassmorphism) للمسة عصرية */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* تحسين المساحات والزوايا */
+    padding: 1.5rem;
+    margin-top: 15px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* توسيط الروابط وإضافة مسافة بينها لسهولة النقر */
+  .navbar-nav .nav-item {
+    text-align: center;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* خط فاصل خفيف جداً */
+  }
+
+  /* إزالة الخط الفاصل من العنصر الأخير */
+  .navbar-nav .nav-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  /* جعل زر التبرع بعرض القائمة بالكامل (UX أفضل للموبايل) */
+  .navbar-collapse .btn-custom-green {
+    display: block;
+    width: 100%;
+    margin-top: 20px !important;
+    text-align: center;
+    margin-left: 0 !important; /* إلغاء الـ ms-lg-4 في الشاشات الصغيرة */
+  }
+}
+
+.whatsapp-icon {
+  animation-name: change;
+  animation-iteration-count: infinite;
+  color: #06a159;
+  animation-duration: 1s;
+  font-size: 17px;
+  margin-right: 7px;
+  padding-top: 3px;
+}
+@keyframes change {
+  0% {
+  }
+  50% {
+    color: #02f54b;
+    transform: scale(1.3);
+  }
+  100% {
+  }
+}
+
+.email-icon {
+  animation-name: change1;
+  animation-iteration-count: infinite;
+  color: #ffffff;
+  animation-duration: 1s;
+  font-size: 17px;
+  margin-right: 7px;
+  padding-top: 5px;
+}
+@keyframes change1 {
+  0% {
+  }
+  50% {
+    color: #a1a1a1;
+    transform: scale(1.3);
+  }
+  100% {
+  }
+}
+
+/* contact email style */
+.email-outline-btn {
+  color: #4d928f;
+  border: 2px solid #4d928f;
+  background-color: transparent;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.email-outline-btn:hover {
+  background-color: #4d928f;
+  color: #ffffff;
+  transform: translateY(-2px); /* ارتفاع الزر للأعلى قليلاً عند تمرير الماوس */
+  box-shadow: 0 4px 12px rgba(77, 146, 143, 0.2) !important;
+}
+
+/* Overlay For COMING SOON */
+
+/* .blur-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(5px); 
+    -webkit-backdrop-filter: blur(5px); 
+    z-index: 10; 
+} */
+
+/* style for video */
+/* خصائص الحاوية الأساسية */
+.video-protection-container {
+  background-color: #000;
+  user-select: none; /* منع تحديد النص */
+}
+
+/* تصميم العلامة المائية */
+.watermark-text {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  ); /* لون أبيض شفاف بنسبة 40% حتى لا يزعج المشاهد */
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* ظل أسود لتكون واضحة على الخلفيات البيضاء في الفيديو */
+  z-index: 10;
+  pointer-events: none; /* مهم جداً: يجعل النقرات تمر من خلال النص إلى الفيديو */
+  transition: all 3s ease-in-out; /* حركة انتقال ناعمة عند تغيير مكانها */
+  white-space: nowrap;
+}
+
