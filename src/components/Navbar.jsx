@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar({logo}) {
+    const [isNavOpen, setIsNavOpen] = useState(false);
   return (
     <div>
         <div className="top-bar position-absolute w-100 z-3 py-2 px-4 border-bottom border-light border-opacity-25"
@@ -22,21 +23,21 @@ function Navbar({logo}) {
         <nav className="navbar navbar-dark navbar-expand-lg bg-transparent position-absolute w-100 z-3 py-3" style={{ top: '40px' }}>
             <div className="container">
             <Link to="/" className="logo"><img src={logo} alt="PULSE Logo" className="logo"/></Link>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-                aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler" type="button" onClick={() => setIsNavOpen(!isNavOpen)}
+                aria-controls="mainNav" aria-expanded={isNavOpen} aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="mainNav">
+            <div className={`collapse navbar-collapse ${isNavOpen ? 'show' : ''}`} id="mainNav">
                 <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li className="nav-item"><Link className="nav-link active" to="/">Home</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to="/about">About Us</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to="/programs">Our Programs</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to="/news">News</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to="/donate">Donation</Link></li>
-                    <li className="nav-item"><Link className="nav-link" to="/contact">Contact Us</Link></li>
+                    <li className="nav-item"><Link className="nav-link active" to="/" onClick={() => setIsNavOpen(false)}>Home</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/about" onClick={() => setIsNavOpen(false)}>About Us</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/programs" onClick={() => setIsNavOpen(false)}>Our Programs</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/news" onClick={() => setIsNavOpen(false)}>News</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/donate" onClick={() => setIsNavOpen(false)}>Donation</Link></li>
+                    <li className="nav-item"><Link className="nav-link" to="/contact" onClick={() => setIsNavOpen(false)}>Contact Us</Link></li>
                 </ul>
                 <Link className="btns btn ms-lg-4 px-4 fw-bold"
-                to="/donate">Donate</Link>
+                to="/donate" onClick={() => setIsNavOpen(false)}>Donate</Link>
             </div>
             </div>
         </nav>
