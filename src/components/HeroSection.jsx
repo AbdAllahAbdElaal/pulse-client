@@ -7,7 +7,7 @@ function HeroSection() {
         <header className="hero-video-section position-relative min-vh-100 d-flex align-items-center overflow-hidden pb-5">
             <video autoPlay loop muted playsInline className="position-absolute w-100 h-100 object-fit-cover z-0"
                 style={{ top: '0', left: '0', objectFit: 'cover' }}>
-                <source src="/videos/IMG_7730 2.MOV" type="video/mp4"/>
+                <source src="/videos/HeroVideo.mp4" type="video/mp4"/>
                 Your browser does not support the video tag.
             </video>
 
