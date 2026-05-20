@@ -42,7 +42,7 @@ function NewsSection({ limit }) {
             <div className="col-md-6 col-lg-4" key={news.id}>
               <article className="card border-1 shadow-sm h-100 custom-card-hover">
                 <img
-                  src={news.image} // تأكد أن اسم الحقل يطابق ما كتبناه في Laravel
+                  src={news.image_url} // تأكد أن اسم الحقل يطابق ما كتبناه في Laravel
                   className="card-img-top"
                   alt={news.title}
                   style={{ height: '200px', objectFit: 'cover' }}
