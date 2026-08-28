@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Contact() {
     return (
@@ -7,8 +8,8 @@ function Contact() {
             <div className="container">
                 <h2 className="mb-3">Your Support Can Make a Difference</h2>
                 <p className="mb-4">Volunteer, donate, or partner with us to rebuild healthcare education.</p>
-                <a style={{ color: '#035f34' }} className="btn btn-light btn-lg px-5 rounded-pill fw-bold" 
-                   href="contact.html">Support Now</a>
+                <Link style={{ color: '#035f34' }} className="btn btn-light btn-lg px-5 rounded-pill fw-bold" 
+                   to="/contact">Support Now</Link>
             </div>
         </section>
     )

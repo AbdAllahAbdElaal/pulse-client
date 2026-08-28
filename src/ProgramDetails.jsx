@@ -1,9 +1,76 @@
-import React from "react";
+import {React,useRef, useEffect} from "react";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import { Link } from "react-router-dom";
 
 function ProgramDetails() {
+  const videoContainerRef = useRef(null);
+
+  const handleVideoClick = () => {
+    const container = videoContainerRef.current;
+    const iframe = document.getElementById("youtubePlayer");
+
+    // Fullscreen
+    if (container && container.requestFullscreen) {
+      container.requestFullscreen();
+    }
+
+    // Play YouTube
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "playVideo",
+          args: []
+        }),
+        "*"
+      );
+    }
+  };
+
+  const pauseVideo = () => {
+    const iframe = document.getElementById("youtubePlayer");
+
+    if (iframe) {
+      iframe.contentWindow.postMessage(
+        JSON.stringify({
+          event: "command",
+          func: "pauseVideo",
+          args: []
+        }),
+        "*"
+      );
+    }
+  };
+
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      // إذا خرجنا من Fullscreen
+      if (!document.fullscreenElement) {
+        pauseVideo();
+      }
+    };
+
+    const handleBackButton = () => {
+      // إذا كان الفيديو في Fullscreen
+      if (document.fullscreenElement) {
+        pauseVideo();
+
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullscreenChange);
+    window.addEventListener("popstate", handleBackButton);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullscreenChange);
+      window.removeEventListener("popstate", handleBackButton);
+    };
+  }, []);
   return (
     <>
       <Navbar logo="/images/white-logo.png" />
@@ -19,14 +86,17 @@ function ProgramDetails() {
             <div className="col-lg-8 mb-4">
               <h3 className="fw-bold mb-4">Program Overview</h3>
               <div
+                ref={videoContainerRef}
                 className="video-protection-container position-relative overflow-hidden rounded shadow-sm"
                 id="videoContainer"
                 onContextMenu={(e) => e.preventDefault()}
               >
                 <div className="ratio ratio-16x9">
                   <iframe
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ?modestbranding=1&rel=0&disablekb=1"
+                    src="https://player.mediadelivery.net/embed/737208/93eddd28-e711-4f12-8ed0-5e972630fab2?autoplay=false&loop=false&muted=false&preload=true&responsive=true"
                     title="Course Video"
+                    loading="lazy"
+                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen"
                     allowFullScreen
                   ></iframe>
                 </div>
